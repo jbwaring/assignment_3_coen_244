@@ -15,8 +15,16 @@ bool ReferenceManager::add(const Reference reference){
 }
 
 vector<string> ReferenceManager::get_ref(int i){
+	vector<string> ans;
+	ans.push_back("void");
+	ans.push_back("void");
+	ans.push_back("void");
+	ans.push_back("void");
 
-return ref_vector[i].get_ref();
+	if(i<size)
+		return ref_vector[i].get_ref();
+	else
+		return ans ; 
 
 }
 

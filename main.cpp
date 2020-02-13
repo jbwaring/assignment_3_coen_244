@@ -36,7 +36,7 @@ vector<string> t1_infos = t1.getTextBook_vector();
 for(int i=0; i<6; i++)
 	cout << "\n" << t1_infos[i];
 
-ReferenceManager m1(3);
+ReferenceManager m1();
 m1.add(joyce_araby);
 m1.add(ref2);
 m1.add(ref3);
