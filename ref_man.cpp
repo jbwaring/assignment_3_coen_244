@@ -2,19 +2,16 @@
 
 ReferenceManager::ReferenceManager(int siz){
 
-	Reference RefMan[siz];
-	size = 0;
+	size = siz;
 }
 
 bool ReferenceManager::add(const Reference reference){
 
-
-
+	if(ref_vector.size()<size){
 	ref_vector.push_back(reference);
-
-
-
 	return true;
+	}
+	return false;
 }
 
 vector<string> ReferenceManager::get_ref(int i){
