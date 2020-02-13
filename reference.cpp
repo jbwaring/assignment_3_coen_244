@@ -19,7 +19,7 @@
 			author = at;
 			title  = tt;
 
-			
+
 		}
 		string Reference::get_title(){
 			return title;
@@ -41,4 +41,12 @@
 			ans.push_back(to_string(id));//ans[3]
 
 			return ans;
+		}
+
+		Reference::Reference(const Reference &ref){
+				id = ref.id;
+				year = ref.year;
+				author = ref.author;
+				title = ref.title;
+
 		}

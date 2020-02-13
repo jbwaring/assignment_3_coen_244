@@ -17,6 +17,7 @@ public:
 	TextBook(string at, string tt, long int barcode, int yr, int length, string wurl);
 	vector<string> getTextBook_vector();
 	string getURL();
+	
 };
 
 #endif

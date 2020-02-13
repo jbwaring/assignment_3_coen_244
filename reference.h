@@ -17,6 +17,7 @@ class Reference{
 		Reference();
 
 		Reference(string at, string tt, int idd, int yr);
+		Reference(const Reference &ref);
 
 		string get_title();
 		string get_author();

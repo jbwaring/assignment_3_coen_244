@@ -5,13 +5,16 @@
 #include "article.h"
 #include "book.h"
 #include "textbook.h"
+#include "ref_man.h"
 using namespace std;
 int main() {
 	
 
 Reference joyce_araby("James Joyce", "Araby", 12, 1914);
-vector<string> ref_joyce_araby = joyce_araby.get_ref();
-
+Reference ref2("JB", "TOP", 24, 1999);
+Reference ref3("JR", "TPPZO", 3, 2019);
+Reference ref1(joyce_araby);
+vector<string> ref_joyce_araby = ref1.get_ref();
 for(int i=0; i<4; i++)
 	cout << "\n" << ref_joyce_araby[i];
 
@@ -33,6 +36,38 @@ vector<string> t1_infos = t1.getTextBook_vector();
 for(int i=0; i<6; i++)
 	cout << "\n" << t1_infos[i];
 
+ReferenceManager m1(12);
+m1.add(joyce_araby);
+m1.add(ref2);
+m1.add(ref3);
+
+vector<string> m1_vector = m1.get_ref(0);
+cout << endl << "----------";
+for(int i=0; i<4; i++)
+	cout << "\n" << m1_vector[i];
+cout << endl;
+m1_vector = m1.get_ref(1);
+cout << endl << "----------";
+for(int i=0; i<4; i++)
+	cout << "\n" << m1_vector[i];
+cout << endl;
+m1_vector = m1.get_ref(2);
+cout << endl << "----------";
+for(int i=0; i<4; i++)
+	cout << "\n" << m1_vector[i];
+cout << endl;
+
+
+
+m1.del_ref(0);
+m1_vector = m1.get_ref(0);
+cout << endl << "----------";
+for(int i=0; i<4; i++)
+	cout << "\n" << m1_vector[i];
+cout << endl;
+cout << "Search ref:";
+cout << m1.ref_search(24);
+cout << endl << "ID of ref 1 is:" << m1.get_id(0);
 return 0;
 
 }
