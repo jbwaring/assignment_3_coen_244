@@ -23,6 +23,7 @@ class Reference{
 		int get_id();
 		int get_year();
 		vector<string> get_ref();
+		void setRef(string at, string tt, int idd, int yr);
 };
 
 

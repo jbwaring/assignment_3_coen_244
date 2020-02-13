@@ -1,4 +1,4 @@
-CPP = reference.cpp
+CPP = reference.cpp article.cpp book.cpp textbook.cpp ref_man.cpp
 
 all:main
 

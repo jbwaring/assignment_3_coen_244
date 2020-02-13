@@ -13,7 +13,14 @@
 			author = at;
 			title  = tt;
 		}
+		void Reference::setRef(string at, string tt, int idd, int yr){
+			id = idd;
+			year = yr;
+			author = at;
+			title  = tt;
 
+			
+		}
 		string Reference::get_title(){
 			return title;
 		}
