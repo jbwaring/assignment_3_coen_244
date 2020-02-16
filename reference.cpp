@@ -33,15 +33,6 @@
 		int Reference::get_year(){
 			return year;
 		}
-		vector<string> Reference::get_ref(){
-			vector<string> ans; 
-			ans.push_back(author);//ans[0]
-			ans.push_back(title);//ans[1]
-			ans.push_back(to_string(year));//ans[2]
-			ans.push_back(to_string(id));//ans[3]
-
-			return ans;
-		}
 
 		Reference::Reference(const Reference &ref){
 				id = ref.id;

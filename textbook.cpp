@@ -6,19 +6,20 @@
 		url = "void";
 	}
 
-	TextBook::TextBook(string at, string tt, long int barcode, int yr, int length, string wurl){
-		setBook(at, tt, barcode, yr, length);
+	TextBook::TextBook(string at, string tt, long int barcode, int yr, int length, string wurl, int id):Book(at, tt, barcode, yr, length, id){
 		url = wurl;
 	}
 
-	vector<string> TextBook::getTextBook_vector(){
+	vector<string> TextBook::get_ref(){
 		vector<string> ans;
-		ans.push_back(get_author());//ans[0]
-		ans.push_back(get_title());//ans[1]
-		ans.push_back(to_string(get_year()));//ans[2]
-		ans.push_back(to_string(getISBN()));//ans[3]
-		ans.push_back(url);//ans[4]
-		ans.push_back(to_string(get_id()));//ans[5]
+		ans.push_back(this->get_author().insert(0, "Author: "));
+		ans.push_back(this->get_title().insert(0, "Title: "));
+		ans.push_back(to_string(this->get_year()).insert(0, "Year: "));
+		ans.push_back(to_string(ISBN).insert(0, "ISBN: "));
+		ans.push_back(to_string(book_length).insert(0, "Length: "));
+		ans.push_back(to_string(this->get_id()).insert(0, "Reference ID: "));
+		ans.push_back(url.insert(0, "URL: "));
+		
 		return ans;
 
 	}

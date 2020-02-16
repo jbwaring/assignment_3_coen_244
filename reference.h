@@ -23,7 +23,9 @@ class Reference{
 		string get_author();
 		int get_id();
 		int get_year();
-		vector<string> get_ref();
+		virtual vector<string> get_ref(){
+			vector<string> ans; return ans;
+		}; //Make sure each daughter-class implements its own get_ref().
 		void setRef(string at, string tt, int idd, int yr);
 };
 

@@ -14,19 +14,7 @@ bool ReferenceManager::add(const Reference reference){
 	return false;
 }
 
-vector<string> ReferenceManager::get_ref(int i){
-	vector<string> ans;
-	ans.push_back("void");
-	ans.push_back("void");
-	ans.push_back("void");
-	ans.push_back("void");
 
-	if(i<size)
-		return ref_vector[i].get_ref();
-	else
-		return ans ; 
-
-}
 
 bool ReferenceManager::del_ref(int pos){
 	if(pos>ref_vector.size()-1)

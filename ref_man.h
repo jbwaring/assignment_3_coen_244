@@ -10,7 +10,7 @@
 using namespace std;
 
 
-class ReferenceManager: public Article, public TextBook, public Book {
+class ReferenceManager: public Reference {
 private:
 
 vector<Reference> ref_vector;
@@ -20,10 +20,13 @@ public:
 
 	ReferenceManager(int size);
 	bool add(const Reference reference);
-	vector<string> get_ref(int i);
 	bool del_ref(int pos);
 	bool ref_search(int id);
 	int get_id(int i);
+	int get_vec_size(){
+		return ref_vector.size();
+	}
+
 };
 
 

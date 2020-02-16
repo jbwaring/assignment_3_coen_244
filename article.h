@@ -13,12 +13,14 @@ private:
 	int endPage;
 	string journal_info;
 
+
 public:
 
 	Article();
-	Article( int st, int end, string inf);
+	Article(string at, string tt, int idd, int yr, int st, int end, string inf);
 	int getNumberOfPages();
-
+	vector<string> get_ref();
+	
 
 };
 

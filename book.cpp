@@ -2,14 +2,10 @@
 
 Book::Book(){
 	ISBN = -1;
-	book_length = -1;
-	setRef("Author not set.", "Title not set.", -1, -1);
-
 }
-Book::Book(string at, string tt, long int barcode, int yr, int length){
+Book::Book(string at, string tt, long int barcode, int yr, int length, int idd):Reference(at, tt, idd, yr){
 	ISBN = barcode;
 	book_length = length;
-	setRef(at,tt, -1,yr);
 }
 
 int Book::getNumberOfPages(){
@@ -19,14 +15,24 @@ int Book::getNumberOfPages(){
 void Book::setBook(string at, string tt, long int barcode, int yr, int length){
 	ISBN = barcode;
 	book_length = length;
-	setRef(at,tt, -1,yr);
 }
 
 void Book::setRefID(int ref){
 
-	setRef(get_author(), get_title(), ref, get_year());
+	return;
 }
 
 long int Book::getISBN(){
 	return ISBN;
+}
+
+vector<string> Book::get_ref(){
+	vector<string> ans;
+	ans.push_back(this->get_author().insert(0, "Author: "));
+		ans.push_back(this->get_title().insert(0, "Title: "));
+		ans.push_back(to_string(this->get_year()).insert(0, "Year: "));
+		ans.push_back(to_string(ISBN).insert(0, "ISBN: "));
+		ans.push_back(to_string(book_length).insert(0, "Length: "));
+		ans.push_back(to_string(this->get_id()).insert(0, "Reference ID: "));
+	return ans;
 }

@@ -8,66 +8,49 @@
 #include "ref_man.h"
 using namespace std;
 int main() {
-	
 
-Reference joyce_araby("James Joyce", "Araby", 12, 1914);
-Reference ref2("JB", "TOP", 24, 1999);
-Reference ref3("JR", "TPPZO", 3, 2019);
-Reference ref1(joyce_araby);
-vector<string> ref_joyce_araby = ref1.get_ref();
-for(int i=0; i<4; i++)
-	cout << "\n" << ref_joyce_araby[i];
+Article A1("Joyce", "Araby", 87, 1914, 2, 10, "No info available");
 
+cout << endl << "Number of Pages in Article 1: "<<  A1.getNumberOfPages() << " pages."<<endl;
+
+
+vector<string> A1_vec = A1.get_ref();
+for(int i =0; i<A1_vec.size(); i++)
+	cout << endl << A1_vec[i];
 cout << endl << endl;
-Article a1(2, 8, "About the new Airbus A380");
-cout << a1.getNumberOfPages();
-a1.setRef("James Joyce", "Ara123testby", 12, 1914);
-cout << endl << a1.get_title() << endl;
+Book B1("Thomas Hardy","Far From the Madding Crowd", 983948394333213, 1856, 758, 12);
+vector<string> B1_vec = B1.get_ref();
+for(int i =0; i<B1_vec.size(); i++)
+	cout << endl << B1_vec[i];
 cout << endl << endl;
-Book b1("James Joyce", "Aratestby", 943746376473, 1914, 324);
-b1.setRefID(23);
+TextBook T1("Wiley","Intro to Physics", 983948394333213, 2003, 1054, "wwww.hello.com" ,10);
+vector<string> T1_vec = T1.get_ref();
+for(int i =0; i<T1_vec.size(); i++)
+	cout << endl << T1_vec[i];
+cout << "\n\n\n";
 
-cout << b1.get_id()<< endl << b1.getNumberOfPages() << endl << b1.getISBN(); 
-TextBook t1("Willey", "Intro to physics", 3283294629742, 2016, 845, "www.textbook.com");	
-cout << endl << endl << t1.get_title() << endl << "---------------";
+ReferenceManager R1(5); //Max Number of Ref is 10.
+cout << "ReferenceManager:"<< endl;
+R1.add(B1);
+R1.add(T1);
+R1.add(A1);
+R1.add(B1);
+R1.add(T1);
 
-vector<string> t1_infos = t1.getTextBook_vector();
+for(int i = 0; i<R1.get_vec_size(); i++){
+	cout << endl <<  "At Rank " << i << " is Reference with ID: " << R1.get_id(i);
+}
 
-for(int i=0; i<6; i++)
-	cout << "\n" << t1_infos[i];
+int search = 87;
+cout << endl << "Is ID " << search << " found? " << R1.ref_search(search)<<endl;
 
-ReferenceManager m1(2);
-m1.add(joyce_araby);
-m1.add(ref2);
-m1.add(ref3);
-
-vector<string> m1_vector = m1.get_ref(0);
-cout << endl << "----------";
-for(int i=0; i<4; i++)
-	cout << "\n" << m1_vector[i];
-cout << endl;
-m1_vector = m1.get_ref(1);
-cout << endl << "----------";
-for(int i=0; i<4; i++)
-	cout << "\n" << m1_vector[i];
-cout << endl;
-m1_vector = m1.get_ref(2);
-cout << endl << "----------";
-for(int i=0; i<4; i++)
-	cout << "\n" << m1_vector[i];
-cout << endl;
-
-
-
-m1.del_ref(0);
-m1_vector = m1.get_ref(0);
-cout << endl << "----------";
-for(int i=0; i<4; i++)
-	cout << "\n" << m1_vector[i];
-cout << endl;
-cout << "Search ref:";
-cout << m1.ref_search(24);
-cout << endl << "ID of ref 1 is:" << m1.get_id(0);
+int del = 2;
+cout << endl << "Reference with ID " << R1.get_id(del) << " is deleted: " << R1.del_ref(del);
+cout << endl << "Is ID " << search << " found? " << R1.ref_search(search)<<endl;
+for(int i = 0; i<R1.get_vec_size(); i++){
+	cout << endl <<  "At Rank " << i << " is Reference with ID: " << R1.get_id(i);
+}
+cout << endl << endl;
 return 0;
 
 }

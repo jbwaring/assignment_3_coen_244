@@ -14,8 +14,8 @@ private:
 public:
 
 	TextBook();
-	TextBook(string at, string tt, long int barcode, int yr, int length, string wurl);
-	vector<string> getTextBook_vector();
+	TextBook(string at, string tt, long int barcode, int yr, int length, string wurl, int id);
+	vector<string> get_ref();
 	string getURL();
 	
 };
