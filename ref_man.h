@@ -1,4 +1,4 @@
- #include <string>
+#include <string>
 #include <iostream>
 #include <vector>
 #include "reference.h"
@@ -7,6 +7,12 @@
 #include "article.h"
 #ifndef REF_MAN_H
 #define REF_MAN_H
+
+#define RESET   "\033[0m"
+#define RED     "\033[31m"      /* Red */
+#define GREEN   "\033[32m"     /* Green */
+
+
 using namespace std;
 
 
@@ -26,7 +32,9 @@ public:
 	int get_vec_size(){
 		return ref_vector.size();
 	}
-
+	void rank_print();
+	void search_print(int search);
+	void del_print(int del);
 };
 
 

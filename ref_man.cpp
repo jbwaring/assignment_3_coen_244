@@ -41,3 +41,36 @@ return ans;
 int ReferenceManager::get_id(int i){
 	return ref_vector[i].get_id();
 }
+
+
+void ReferenceManager::rank_print(){
+cout << "ReferenceManager:"<< endl;
+for(int i = 0; i<get_vec_size(); i++){
+	cout << endl <<  "At Rank " << i << " is Reference with ID: " << get_id(i);
+	}
+}
+
+
+void ReferenceManager::search_print(int search){
+	cout << endl << "Is ID " << search << " found? ";
+
+	if(!ref_search(search))
+	cout << RED << "No." <<RESET;
+else 
+	cout << GREEN << "Yes." << RESET;
+}
+
+void ReferenceManager::del_print(int del){
+
+cout << endl << "Reference with ID " << get_id(del) << " is deleted: ";
+if(!del_ref(del))
+	cout << RED << "No." <<RESET;
+else 
+	cout << GREEN << "Yes." << RESET;
+
+
+
+}
+
+
+

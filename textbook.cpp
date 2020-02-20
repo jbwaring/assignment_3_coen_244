@@ -7,7 +7,9 @@
 	}
 
 	TextBook::TextBook(string at, string tt, long int barcode, int yr, int length, string wurl, int id):Book(at, tt, barcode, yr, length, id){
-		url = wurl;
+		
+		url = "\e[3m\e[1;34m\033[0m";
+		url.insert(11,wurl);
 	}
 
 	vector<string> TextBook::get_ref(){

@@ -7,40 +7,33 @@
 #include "textbook.h"
 #include "ref_man.h"
 using namespace std;
-void println();
+void println();//Prints a separator for better lisibility.
+void vecPrint(vector<string> input); //Facilitates vector string sequential printing.
+
 int main() {
 
-Article A1("Joyce", "Araby", 87, 1914, 2, 10, "No info available");
+Article A1("Joyce", "Araby", 87, 1914, 2, 10, "No info available"); 
 
 cout << endl << "Number of Pages in Article 1: "<<  A1.getNumberOfPages() << " pages."<<endl;
 
 println();
-vector<string> A1_vec = A1.get_ref();
-for(int i =0; i<A1_vec.size(); i++)
-	cout << endl << A1_vec[i];
+vecPrint(A1.get_ref()); // Prints properties of Article A1
 println();
+
 Book B1("Thomas Hardy","Far From the Madding Crowd", 983948394333213, 1856, 758, 12);
 Book B2("William Shakespeare", "The Tempest",  9781976805868, 1611, 243, 46);
 
-vector<string> B1_vec = B1.get_ref();
-for(int i =0; i<B1_vec.size(); i++)
-	cout << endl << B1_vec[i];
+vecPrint(B1.get_ref()); // Prints properties of Book B1
 println();
 
-vector<string> B2_vec = B2.get_ref();
-for(int i =0; i<B2_vec.size(); i++)
-	cout << endl << B2_vec[i];
+vecPrint(B2.get_ref()); // Prints properties of Book B2
 println();
 
-TextBook T1("Wiley","Intro to Physics", 983948394333213, 2003, 1054, "wwww.hello.com" ,10);
-vector<string> T1_vec = T1.get_ref();
-for(int i =0; i<T1_vec.size(); i++)
-	cout << endl << T1_vec[i];
+TextBook T1("Wiley","Intro to Physics", 983948394333213, 2003, 1054, "https://www.wiley.com/en-al/Introduction+to+Physics" ,10);
+vecPrint(T1.get_ref()); // Prints properties of TextBook T1
 println();
 
 ReferenceManager R1(6); //Max Number of Ref is 10.
-
-cout << "ReferenceManager:"<< endl;
 R1.add(B1);
 R1.add(T1);
 R1.add(A1);
@@ -48,29 +41,32 @@ R1.add(B1);
 R1.add(T1);
 R1.add(B2);
 
-for(int i = 0; i<R1.get_vec_size(); i++){
-	cout << endl <<  "At Rank " << i << " is Reference with ID: " << R1.get_id(i);
-}
+R1.rank_print(); // Prints the content stored in the ReferenceManager Object and their Rank No.
 println();
 
 int search = 87;
-cout << endl << "Is ID " << search << " found? " << R1.ref_search(search)<<endl;
+R1.search_print(search); // Prints search result for a given ID number.
 println();
 int del = 2;
-cout << endl << "Reference with ID " << R1.get_id(del) << " is deleted: " << R1.del_ref(del) << endl;
+R1.del_print(del); // Prints Deletion confirmation upon prior-existence of given ID.
 println();
-cout << endl << "Is ID " << search << " found? " << R1.ref_search(search)<<endl;
+R1.search_print(search); // Prints search result for a given ID number (Notice it is not found anymore because we just deleted it.)
 println();
-cout << "ReferenceManager:"<< endl;
-for(int i = 0; i<R1.get_vec_size(); i++){
-	cout << endl <<  "At Rank " << i << " is Reference with ID: " << R1.get_id(i);
-}
+R1.rank_print(); // Prints the content stored in the ReferenceManager Object and their Rank No. (-> Notice it has changed due to prior deletion.)
 println();
-cout << endl << endl;
+cout << endl;
+
 return 0;
 
 }
 
 void println(){
 	cout << endl << "══════════════════════════════════"<<endl;
+}
+
+void vecPrint(vector<string> input){
+	for(int i =0; i<input.size(); i++){
+		cout << endl << input[i];
+	}
+	
 }
