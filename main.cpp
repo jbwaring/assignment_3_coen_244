@@ -1,3 +1,8 @@
+/*
+COEN 244 - ASSIGNMENT 3: Library Referencing System
+WARING JEAN-BAPTISTE	40054925
+FAROOQ MAJD				40087448			
+*/
 #include <string>
 #include <iostream>
 #include <vector>
@@ -12,7 +17,7 @@ void vecPrint(vector<string> input); //Facilitates vector string sequential prin
 
 int main() {
 
-Article A1("Joyce", "Araby", 87, 1914, 2, 10, "No info available"); 
+Article A1("Joyce", "Araby", 87, 1914, 2, 10, "Later published as part of 'Dubliners'."); 
 
 cout << endl << "Number of Pages in Article 1: "<<  A1.getNumberOfPages() << " pages."<<endl;
 
@@ -20,8 +25,8 @@ println();
 vecPrint(A1.get_ref()); // Prints properties of Article A1
 println();
 
-Book B1("Thomas Hardy","Far From the Madding Crowd", 983948394333213, 1856, 758, 12);
-Book B2("William Shakespeare", "The Tempest",  9781976805868, 1611, 243, 46);
+Book B1("Thomas Hardy", "Penguin", "Far From the Madding Crowd", 983948394333213, 1856, 758, 12);
+Book B2("William Shakespeare","Oxford University Press", "The Tempest",  9781976805868, 1611, 243, 46);
 
 vecPrint(B1.get_ref()); // Prints properties of Book B1
 println();
@@ -29,11 +34,11 @@ println();
 vecPrint(B2.get_ref()); // Prints properties of Book B2
 println();
 
-TextBook T1("Wiley","Intro to Physics", 983948394333213, 2003, 1054, "https://www.wiley.com/en-al/Introduction+to+Physics" ,10);
+TextBook T1("Griffiths", "Wiley", "Intro to Physics", 983948394333213, 2003, 1054, "https://www.wiley.com/en-al/Introduction+to+Physics" ,10);
 vecPrint(T1.get_ref()); // Prints properties of TextBook T1
 println();
 
-ReferenceManager R1(6); //Max Number of Ref is 10.
+ReferenceManager R1(20); //Max Number of Ref is 10.
 R1.add(B1);
 R1.add(T1);
 R1.add(A1);

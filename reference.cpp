@@ -1,10 +1,11 @@
+/*
+COEN 244 - ASSIGNMENT 3: Library Referencing System
+WARING JEAN-BAPTISTE	40054925
+FAROOQ MAJD				40087448			
+*/
 #include "reference.h"
 
 		Reference::Reference(){
-			id = -1;
-			year = -1;
-			author = "Author not set.";
-			title  = "Title not set.";
 		}
 
 		Reference::Reference(string at, string tt, int idd, int yr){

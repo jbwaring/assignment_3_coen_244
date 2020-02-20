@@ -1,3 +1,8 @@
+/*
+COEN 244 - ASSIGNMENT 3: Library Referencing System
+WARING JEAN-BAPTISTE	40054925
+FAROOQ MAJD				40087448			
+*/
 #include <string>
 #include <iostream>
 #include <vector>
