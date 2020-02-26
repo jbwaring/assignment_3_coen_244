@@ -1,7 +1,7 @@
 /*
 COEN 244 - ASSIGNMENT 3: Library Referencing System
 WARING JEAN-BAPTISTE	40054925
-FAROOQ MAJD				40087448			
+FAROUQ HAMEDALLAH		40087448
 */
 #include "book.h"
 
@@ -11,14 +11,14 @@ Book::Book(string at, string pb, string tt, long int barcode, int yr, int length
 	book_length = length;
 }
 
-int Book::getNumberOfPages(){ //Returns the number of pages in the book.
+int Book::getNumberOfPages(){	//Returns the number of pages in the book.
 	return book_length;
 }
 
-long int Book::getISBN(){
+long int Book::getISBN(){		//Returns the ISBN code.
 	return ISBN;
 }
-string Book::get_publisher(){
+string Book::get_publisher(){	//Returns the publisher.
 	return publisher;
 }
 

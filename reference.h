@@ -1,7 +1,7 @@
 /*
 COEN 244 - ASSIGNMENT 3: Library Referencing System
 WARING JEAN-BAPTISTE	40054925
-FAROOQ MAJD				40087448			
+FAROUQ HAMEDALLAH		40087448
 */
 #include <string>
 #include <iostream>
@@ -13,9 +13,9 @@ class Reference{
 
 	private:
 
-		int id;
-		int year;
-		string author;
+		int id;			//All references have a unique identifier (of type int).
+		int year;		//Year of publication (of type int).
+		string author;	//All references have a title and author (both of type string).
 		string title;
 
 	public:

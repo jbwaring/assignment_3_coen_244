@@ -1,7 +1,7 @@
 /*
 COEN 244 - ASSIGNMENT 3: Library Referencing System
 WARING JEAN-BAPTISTE	40054925
-FAROOQ MAJD				40087448			
+FAROUQ HAMEDALLAH		40087448
 */
 #include "textbook.h"
 
@@ -10,7 +10,7 @@ FAROOQ MAJD				40087448
 
 	TextBook::TextBook(string at, string pb, string tt, long int barcode, int yr, int length, string wurl, int id):Book(at, pb, tt, barcode, yr, length, id){
 		
-		url = "\e[3m\e[1;34m\033[0m";
+		url = "\e[3m\e[1;34m\033[0m";			//URL implementation.
 		url.insert(11,wurl);
 	}
 
@@ -29,6 +29,6 @@ FAROOQ MAJD				40087448
 
 	}
 
-	string TextBook::getURL(){
+	string TextBook::getURL(){			//Returns the URL.
 		return url;
 	}

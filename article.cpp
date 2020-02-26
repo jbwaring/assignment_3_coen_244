@@ -1,7 +1,7 @@
 /*
 COEN 244 - ASSIGNMENT 3: Library Referencing System
 WARING JEAN-BAPTISTE	40054925
-FAROOQ MAJD				40087448			
+FAROUQ HAMEDALLAH		40087448
 */
 #include "article.h"
 
@@ -13,11 +13,11 @@ FAROOQ MAJD				40087448
 		journal_info = infos;
 	}
 
-	int Article::getNumberOfPages(){
+	int Article::getNumberOfPages(){		//Gets the number of pages by subtracting the last page from the first page.
 		return endPage-startPage;
 	}
 
-	vector<string> Article::get_ref(){
+	vector<string> Article::get_ref(){		
 		vector<string> ans;
 		ans.push_back(get_author().insert(0, "Author: "));
 		ans.push_back(get_title().insert(0, "Title: "));

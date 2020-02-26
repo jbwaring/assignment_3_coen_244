@@ -1,10 +1,10 @@
 /*
 COEN 244 - ASSIGNMENT 3: Library Referencing System
 WARING JEAN-BAPTISTE	40054925
-FAROOQ MAJD				40087448			
+FAROUQ HAMEDALLAH		40087448
 */
 #include "reference.h"
-
+	
 		Reference::Reference(){
 		}
 
@@ -22,16 +22,16 @@ FAROOQ MAJD				40087448
 
 
 		}
-		string Reference::get_title(){
+		string Reference::get_title(){		//Returns the title.
 			return title;
 		}
-		string Reference::get_author(){
+		string Reference::get_author(){		//Returns the author.
 			return author;
 		}
-		int Reference::get_id(){
+		int Reference::get_id(){			//Returns the id.
 			return id;
 		}
-		int Reference::get_year(){
+		int Reference::get_year(){			//Returns the year.
 			return year;
 		}
 

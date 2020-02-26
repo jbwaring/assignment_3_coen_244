@@ -1,7 +1,7 @@
 /*
 COEN 244 - ASSIGNMENT 3: Library Referencing System
 WARING JEAN-BAPTISTE	40054925
-FAROOQ MAJD				40087448			
+FAROUQ HAMEDALLAH		40087448
 */
 #include <string>
 #include <iostream>
@@ -12,9 +12,9 @@ FAROOQ MAJD				40087448
 #define TEXTBOOK_H
 using namespace std;
 
-class TextBook: public Book {
+class TextBook: public Book {		//TextBook is a derived class of Book.
 private:
-	string url;
+	string url;						//Implements the function of getting the URL.
 
 public:
 

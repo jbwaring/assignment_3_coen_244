@@ -1,7 +1,7 @@
 /*
 COEN 244 - ASSIGNMENT 3: Library Referencing System
 WARING JEAN-BAPTISTE	40054925
-FAROOQ MAJD				40087448			
+FAROUQ HAMEDALLAH		40087448			
 */
 #include <string>
 #include <iostream>
@@ -22,20 +22,20 @@ Article A1("Joyce", "Araby", 87, 1914, 2, 10, "Later published as part of 'Dubli
 cout << endl << "Number of Pages in Article 1: "<<  A1.getNumberOfPages() << " pages."<<endl;
 
 println();
-vecPrint(A1.get_ref()); // Prints properties of Article A1
+vecPrint(A1.get_ref()); // Prints properties of Article A1.
 println();
 
 Book B1("Thomas Hardy", "Penguin", "Far From the Madding Crowd", 983948394333213, 1856, 758, 12);
 Book B2("William Shakespeare","Oxford University Press", "The Tempest",  9781976805868, 1611, 243, 46);
 
-vecPrint(B1.get_ref()); // Prints properties of Book B1
+vecPrint(B1.get_ref()); // Prints properties of Book B1.
 println();
 
-vecPrint(B2.get_ref()); // Prints properties of Book B2
+vecPrint(B2.get_ref()); // Prints properties of Book B2.
 println();
 
 TextBook T1("Griffiths", "Wiley", "Intro to Physics", 983948394333213, 2003, 1054, "https://www.wiley.com/en-al/Introduction+to+Physics" ,10);
-vecPrint(T1.get_ref()); // Prints properties of TextBook T1
+vecPrint(T1.get_ref()); // Prints properties of TextBook T1.
 println();
 
 ReferenceManager R1(20); //Max Number of Ref is 10.
