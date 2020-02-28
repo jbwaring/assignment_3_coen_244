@@ -10,4 +10,5 @@ Best,
 
 JB WARING
 
+PS: The use of long int for the ISBN might seem odd since no operation is intended on this number. But the Binary Representation uses 64bits of memory compared to a String Representation's 128bits.
 Built on macOS Catalina 10.15.2 (19C57).
